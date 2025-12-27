@@ -1,4 +1,4 @@
-import { Container, Box, Input, Button, Task, Funcoes } from "./styles"
+import { Container, Box, Input, Button, Task, Funcoes, Dir, Esq } from "./styles"
 import React, { useState } from "react"
 import { v4 as uuid } from 'uuid'
 
@@ -10,7 +10,7 @@ import { MdMargin } from "react-icons/md";
 //<FcEmptyTrash />
 
 function App() {
-  const [List, setList] = useState([{id: uuid(), task: "Nada"}])
+  const [List, setList] = useState([{id: uuid(), task: "Nada", finish: false }])
   const [task, setTask] = useState("")
 
   function palavraAdicionnada(event) {
@@ -18,8 +18,16 @@ function App() {
   }
 
   function adicioneiPalavra() {
-    setList([ ...List, {id: uuid(), task: task}])
+    setList([ ...List, {id: uuid(), task: task, finish: false}])
     
+  }
+
+  function terminei(id) {
+    const newList = List.map(item => (
+      item.id === id ? { ...item, finish: !item.finish} : item
+    ))
+
+    setList(newList)
   }
 
   return(
@@ -32,10 +40,14 @@ function App() {
         <ul>
           {
             List.map(item => (
-              <Task>
-                  <FcCheckmark style={{marginRight: "10px"}} />
-                  <li key={item.id}>{item.task}</li>
-                <FcEmptyTrash style={{marginLeft: "10px"}} />
+              <Task  key={item.id} isFinished={item.finish}>
+                  <Dir>
+                    <FcCheckmark onClick={() => terminei(item.id)} /> 
+                  </Dir>
+                  <li>{item.task}</li>
+                <Esq>
+                  <FcEmptyTrash />
+                </Esq>
               </Task>
             ))
           }

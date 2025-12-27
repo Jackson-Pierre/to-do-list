@@ -29,6 +29,7 @@ export const Input = styled.input`
     height: 40px;
     margin-right: 10px;
     border-radius: 5px;
+    padding: 0 10px;
 `
 
 export const Button = styled.button`
@@ -45,13 +46,25 @@ export const Button = styled.button`
 `
 
 export const Task = styled.div`
-    background-color: #E4E4E4;
+    background: ${ props => props.isFinished ? '#E8FF8B' : '#E4E4E4'};
     box-shadow: 1px 4px 10px rgba(0, 0, 0, 0.2);
     border-radius: 5px;
-    height: 60px;
+    min-height: 60px;
+    height: auto;
     display: flex;
     align-items: center;
     margin-top: 20px;
-    padding: 0 20px;
+    padding: 10px 20px;
     justify-content: space-between;
 `
+
+export const Dir = styled.div`
+    margin-right: 20px;
+    cursor: pointer;
+`
+
+export const Esq = styled.div`
+    margin-left: 20px;
+    cursor: pointer;
+`
+
