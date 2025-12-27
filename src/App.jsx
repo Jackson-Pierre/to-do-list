@@ -1,11 +1,17 @@
-import { Title } from "./styles"
+import { Container, Box, Input, Button, Task, Funcoes } from "./styles"
 import React, { useState } from "react"
 import { v4 as uuid } from 'uuid'
+
+import { FcEmptyTrash, FcCheckmark } from "react-icons/fc";
+import { BsDisplay } from "react-icons/bs";
+import { MdMargin } from "react-icons/md";
+
+//<FcCheckmark />
+//<FcEmptyTrash />
 
 function App() {
   const [List, setList] = useState([{id: uuid(), task: "Nada"}])
   const [task, setTask] = useState("")
-//"Cuidar da Laislly", "Estudar React", "Estudar JS"
 
   function palavraAdicionnada(event) {
     setTask(event.target.value)    
@@ -16,20 +22,26 @@ function App() {
     
   }
 
-
   return(
-    <>
-      <input onChange={palavraAdicionnada} placeholder="O que eu tenho que fazer..." type="text" />
-      <button onClick={adicioneiPalavra} >Adicionar</button>
-
-      <ul>
-        {
-          List.map(item => (
-            <li key={item.id}>{item.task}</li>
-          ))
-        }
-      </ul>
-    </>
+    <Container>
+      <Box>
+        <Funcoes>
+          <Input onChange={palavraAdicionnada} placeholder="O que eu tenho que fazer..." type="text" />
+          <Button onClick={adicioneiPalavra} >Adicionar</Button>
+        </Funcoes>
+        <ul>
+          {
+            List.map(item => (
+              <Task>
+                  <FcCheckmark style={{marginRight: "10px"}} />
+                  <li key={item.id}>{item.task}</li>
+                <FcEmptyTrash style={{marginLeft: "10px"}} />
+              </Task>
+            ))
+          }
+        </ul>
+      </Box>
+    </Container>
   )
 }
 
