@@ -12,7 +12,7 @@ function App() {
   }
 
   function adicioneiPalavra() {
-    setList([{id: uuid(), task: task}])
+    setList([ ...List, {id: uuid(), task: task}])
     
   }
 
