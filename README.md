@@ -1,16 +1,46 @@
-# React + Vite
+# 📝 To-Do List with React and Styled Components
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+This project is a **To-Do List application** developed as a learning challenge using **React** and **Styled Components** for styling.
 
-Currently, two official plugins are available:
+The main goal was to practice fundamental React concepts such as state management, componentization, and list manipulation, while applying modern styling with CSS-in-JS.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+---
 
-## React Compiler
+## 🚀 Features
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+- ✅ Add new tasks  
+- ❌ Delete tasks  
+- ✔️ Mark tasks as completed  
+- 🎨 Styling with Styled Components  
+- ⚡ Simple and responsive interface  
 
-## Expanding the ESLint configuration
+---
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+## 🛠️ Technologies Used
+
+- [React](https://react.dev/)
+- [Styled Components](https://styled-components.com/)
+- JavaScript (ES6+)
+- HTML5
+
+---
+
+## 📚 Concepts Practiced
+
+- `useState`
+- List rendering
+- Props passing
+- Event handling
+- Styling with Styled Components
+- Component organization
+
+---
+
+## 🎯 Project Objective
+
+This project was developed with the purpose of practicing fundamental React concepts such as state management, componentization, and list rendering, using Styled Components for styling.
+
+## 👨‍💻 Author
+
+Developed by **Jackson** 🚀  
+Web development and programming student.
