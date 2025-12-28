@@ -9,5 +9,6 @@ export const GlobalStyles = createGlobalStyle`
     list-style: none;
     outline: none;
     font-family: "Roboto", sans-serif;
+    transition: all 0.2s ease-in-out;
 }
 `

@@ -6,9 +6,6 @@ import { FcEmptyTrash, FcCheckmark } from "react-icons/fc";
 import { BsDisplay } from "react-icons/bs";
 import { MdMargin } from "react-icons/md";
 
-//<FcCheckmark />
-//<FcEmptyTrash />
-
 function App() {
   const [List, setList] = useState([{id: uuid(), task: "Nada", finish: false }])
   const [task, setTask] = useState("")
@@ -30,6 +27,12 @@ function App() {
     setList(newList)
   }
 
+  function cancelar(id) {
+    const newList = List.filter(item  => item.id !== id)
+
+    setList(newList)
+  }
+
   return(
     <Container>
       <Box>
@@ -46,7 +49,7 @@ function App() {
                   </Dir>
                   <li>{item.task}</li>
                 <Esq>
-                  <FcEmptyTrash />
+                  <FcEmptyTrash onClick={() => cancelar(item.id)} />
                 </Esq>
               </Task>
             ))
