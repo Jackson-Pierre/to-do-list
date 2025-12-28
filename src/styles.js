@@ -14,6 +14,12 @@ export const Box = styled.div`
     border-radius: 5px;
     width: min(90%, 520px);
 
+    h3{
+        text-align: center;
+        font-weight: 500;
+        color: #494949ff
+    }
+
     ul{
         margin-top: 50px;
     }
@@ -43,6 +49,14 @@ export const Button = styled.button`
     border-radius: 5px;
     height: 40px;
     cursor: pointer;
+
+    &:hover{
+        opacity: 0.8;
+    }
+
+    &:active{
+        opacity: 0.6;
+    }
 `
 
 export const Task = styled.div`

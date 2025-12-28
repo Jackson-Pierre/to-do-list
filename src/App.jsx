@@ -7,7 +7,7 @@ import { BsDisplay } from "react-icons/bs";
 import { MdMargin } from "react-icons/md";
 
 function App() {
-  const [List, setList] = useState([{id: uuid(), task: "Nada", finish: false }])
+  const [List, setList] = useState([])
   const [task, setTask] = useState("")
 
   function palavraAdicionnada(event) {
@@ -15,7 +15,7 @@ function App() {
   }
 
   function adicioneiPalavra() {
-    setList([ ...List, {id: uuid(), task: task, finish: false}])
+    if (task){setList([ ...List, {id: uuid(), task: task, finish: false}])}
     
   }
 
@@ -42,6 +42,8 @@ function App() {
         </Funcoes>
         <ul>
           {
+
+            List.length > 0 ? (
             List.map(item => (
               <Task  key={item.id} isFinished={item.finish}>
                   <Dir>
@@ -53,6 +55,9 @@ function App() {
                 </Esq>
               </Task>
             ))
+          ) : (
+            <h3>Não há tarefas na lista</h3>
+          )
           }
         </ul>
       </Box>
